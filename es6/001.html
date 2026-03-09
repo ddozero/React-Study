@@ -12,9 +12,25 @@
                 this.brand = car_brand;
 
             }
+            hello(){
+                return `제 차의 브랜드는 ${this.brand} 입니다.`;    
+            }
         }
-        const mycar = new Car("Hyundae");
-        console.log(mycar.brand);
+
+        class Model extends Car {
+            constructor (car_brand, car_model){
+                super(car_brand);
+                this.model = car_model;
+            }
+            hi(){
+                return this.hello() + `, 차종은 ${this.model} 입니다.`;
+            }
+        }
+
+
+        const mycar = new Model("Hyundae", "Genesis");
+        let a = mycar.hi();
+        console.log(a);
     </script>
 </body>
 </html>
