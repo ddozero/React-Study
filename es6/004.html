@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "aaa">aaaa</div>
+    <!--var 와 let-->
+    <script>
+        //var : function scope : var는 if가 없는 것 처럼 취급
+        //let : block scope : 블록에서만 유효 즉 if 블록문 let x = 10; 과 console.log 블록밖으로 나가면 let은 에러 뜸
+        if(true){
+            var x = 10;
+        }
+        console.log(x);
+
+        //02. hoistion 끌어올리기, 호이스팅
+        //var a
+        console.log(a);
+        var a = 5; //a 는 최상단으로 올라감 var는 consolo.log위로 올라갔지만 a값은 정의가 안된 상태 a 값은 undefinde로 초기화
+
+        //let b; //정의가 되고 초기화가 안된상태 라 에러가 발생
+        //console.log(b);
+        //let b = 10; //reference error 뜸 //TDZ Temporal Dead Zone 일시적 사각 지대 
+
+        //03. 중복 선언 가능 여부 
+        var c = 1;
+        var c = 2;
+        console.log(c);
+
+        let d = 1;
+        //let d= 2; 오류뜸 중복선언 불가능
+
+        //04. 전역객체 등록 여부 
+        var e = 100;
+        console.log(window.e); //window객체의 속성이 됨 
+
+        let f = 200;
+        console.log(window.f); //undefined가 됨 window객체가 안됨
+
+        //05. const 
+        //const x = 1;
+        //x = 2; const선언시 변경 불가능 
+        const t = document.getElementById("aaa");
+        t.innerHTML = "bbbb";
+
+    </script>
+    
+</body>
+</html>
