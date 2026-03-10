@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const human  = ['홍길동','남자','22'];
+        //과거방식
+        // const name = human[0];
+        // const gender = human[1];
+        // const age = human[2];
+
+        // console.log(gender);
+
+        //구조분해할당
+        // const[name,, age] = human; //gender가 필요하지 않다면
+        // console.log(age);
+
+        //구조분해 - 객체방식
+        function dateInfo(d){
+            const date = d.getDate();
+            const month = d.getMonth()+1;
+            const year = d.getFullYear();
+
+            return [date, month, year];
+        }
+
+        const [date,month,year] = dateInfo(new Date());
+        console.log(month);
+
+        const person = { //객체에서는 순서 중요하지 않음
+            name : "홍길동",
+            age : 22,
+            gender : "남"
+        }
+        let {name, gender, age, country="대한민국"} = person;
+        console.log(age,country);
+
+    </script>
+</body>
+</html>
