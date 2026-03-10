@@ -3,6 +3,18 @@ import { createRoot } from 'react-dom/client'
 //import './index.css'
 //import App from './App.jsx'
 
+const fruitlist = ['apple', 'banana', 'orange'];
+
+function MyList(){
+  return(
+    <ul>
+    {fruitlist.map(fruit=>
+      <li key ={fruit}>{fruit}</li>
+    )}
+    </ul>
+  );
+}
+
 createRoot(document.getElementById('root')).render(
-  <p>안녕하세요</p>
+  <MyList/>
 )
