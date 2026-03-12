@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //템플릿문자열
+    //01. 원래 기본
+    const name = '홍길동';
+    const age = 30;
+    //const message = "안녕하세요 " + name + "님  \n" + "당신은 " +
+    //age + "세 입니다.";
+  
+
+    //02.템플릿 - 벡틱 사용 `` : 입력한 그대로 표현 간긍
+    const message = `안녕하세요, ${name}님
+    당신은 ${age}세 입니다`
+    console.log(message);
+
+    //03. 변수 삽입 or 계산식 사용
+    let price = 1000;
+    let quantity = 7;
+    let total = `Tota : ${price * quantity}`;
+
+    //04. 
+    const isAdmin = true;
+    const message2 = `Status : ${isAdmin ? 'Admin' : 'Use'}`;
+    console.log(message2);
+
+</script>
+</body>
+</html>
