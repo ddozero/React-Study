@@ -7,8 +7,14 @@
 </head>
 <body>
 <script type = "module">
+    //기본 가져오기
     import result from "./message.js";
-    alert(result());
+    //이름 가져오기
+    import {name,age} from "./person.js";
+
+    console.log(result());
+    console.log(`${name}의 나이 : ${age}`);
+
 </script>
     
 </body>
