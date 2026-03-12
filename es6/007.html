@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //스프레드 연산자 : 객체 일부 복사, 구조분해와 함께 같이 사용하기도, 객채에서도 사용
+    const a = [1,2,3];
+    const b = [4,5,6];
+    const c = [...a,...b]; //[1,2,3,4,5,6]
+
+    //구조분해
+    const numbers = [1,2,3,4,5];
+    const [one, two, ...rest] = numbers; //1은 one, 2는 two, 나머지는 rest
+    console.log('one=' + one);
+    console.log(rest[2]);
+
+    //객체 
+    const man1 = {
+        name : '홍길동',
+        address : '서울',
+        age: 22
+    }
+    const man2 = {
+        name : '홍길민',
+        address : '제주',
+        age : 22
+    }
+    const man = {...man1,...man2};
+    console.log(man);
+</script>
+</body>
+</html>
