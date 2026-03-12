@@ -1,20 +1,16 @@
-//import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-//import './index.css'
-//import App from './App.jsx'
+//import React from "react";
+//import {createRoot, createElement} from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 
-const fruitlist = ['apple', 'banana', 'orange'];
-
-function MyList(){
+function Intro(){
   return(
-    <ul>
-    {fruitlist.map(fruit=>
-      <li key ={fruit}>{fruit}</li>
-    )}
-    </ul>
-  );
+    <>
+      <h1>내 소개</h1>
+      <p>저는 홍길동입니다.</p>
+    </>
+  )
 }
 
 createRoot(document.getElementById('root')).render(
-  <MyList/>
-)
+  <Intro/>
+);
