@@ -3,16 +3,16 @@
 import {createRoot} from 'react-dom/client';
 
 function Human(){
-  const kildong ={
-  name : "홍길동",
-  address : "서울",
-  height : "180cm"
+  
+const style = {
+  color : "white",
+  fontSize: "3rem", //기존 font-size가아님
+  backgroundColor:"black",
+  fontWeight :"700"
 }
+
 return(
-  <>
-    <h1>저는 { kildong.name } 입니다. </h1>
-    <p>{ kildong.address }에 살고 있고요, 키는  { kildong.height } 입니다. </p>
-  </>
+  <span style={style}>저는 홍길동입니다.</span>
 );
 }
 
