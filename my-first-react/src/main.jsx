@@ -4,15 +4,10 @@ import {createRoot} from 'react-dom/client';
 
 function Human(){
   
-const style = {
-  color : "white",
-  fontSize: "3rem", //기존 font-size가아님
-  backgroundColor:"black",
-  fontWeight :"700"
-}
+const age = 21;
 
-return(
-  <span style={style}>저는 홍길동입니다.</span>
+return( //여기다가는 if문을 쓸 수는 없음
+  <p>당신은 {(age)>=20? "성인" : "미성년자"} 입니다.</p>
 );
 }
 
