@@ -1,21 +1,21 @@
-import {createRoot} from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
+import Box from './Box';
 
 
-function Flower(props){
+function App() {
   return (
-    <p>예쁜 {props.kind} 꽃이 피었습니다.</p>
-  )
-}
-
-function Garden(){
-  return(
-    <>
-      <p> 이 곳은 정원입니다. </p>
-      <Flower kind = "장미"/>
-    </>
+    <div>
+      <Box>
+        <h1>안녕하세요!</h1>
+        <p>이 부분은 Box 컴포넌트 children 입니다.</p>
+      </Box>
+      <Box>
+        <button>클릭</button>
+      </Box>
+    </div>
   )
 }
 
 createRoot(document.getElementById('root')).render(
-  <Garden />
+  <App />
 );
