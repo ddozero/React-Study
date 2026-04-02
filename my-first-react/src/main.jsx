@@ -1,21 +1,16 @@
-import { createRoot } from 'react-dom/client';
-import Box from './Box';
+import {createRoot} from 'react-dom/client';
 
+function App(){
+  const sayHi = (name, e) => {
+    alert(`${name}님, 안녕하세요`);
+    alert(`발생한 이벤트는 ${e.type}`)
+  }
 
-function App() {
-  return (
-    <div>
-      <Box>
-        <h1>안녕하세요!</h1>
-        <p>이 부분은 Box 컴포넌트 children 입니다.</p>
-      </Box>
-      <Box>
-        <button>클릭</button>
-      </Box>
-    </div>
+  return(
+    <button onDoubleClick={(event) => sayHi("홍길동", event)}>인사 버튼</button>
   )
 }
 
 createRoot(document.getElementById('root')).render(
-  <App />
-);
+  <App/>
+)
