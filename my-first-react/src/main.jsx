@@ -1,20 +1,23 @@
-import {createRoot} from 'react-dom/client';
+import { useState } from "react"; //리엑트에서 useState훅을 가져옴
+import { createRoot } from "react-dom/client";
 
-function Flowers(){
-  const flowers = ['장미', '매화', '국화'];
+function App(){
+
+  const [name, setName] = useState("홍길동"); //초기값셋팅
+
+  function handleChange(e){
+    setName(e.target.value);
+  }
 
   return(
-    <>
-      <ul>
-        {flowers.map(
-          (flower,index) => <li key ={index}> 나는 {flower} 입니다.</li>
-        )}
-      </ul>
-    
-    </>
+    <form>
+      <label>이름입력 :</label>
+      <input type="text" value={name} onChange={handleChange}></input>
+      <p>입력한 값 : {name}</p>
+    </form>
   )
 }
 
 createRoot(document.getElementById('root')).render(
-  <Flowers />
+  <App/>
 )
