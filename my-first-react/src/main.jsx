@@ -2,21 +2,26 @@ import { useState } from "react"; //리엑트에서 useState훅을 가져옴
 import { createRoot } from "react-dom/client";
 
 function App(){
-  const [myFlower, setMyFlower] = useState("무궁화꽃");
+  //방식 1
+  //const[flower1, setFlower1] = useState();
+  //const[flower2, setFlower2] = useState();
+
+  //방식2
+  const[flower, setFlower] = useState({});
 
   const handleChange = (e) => {
-    setMyFlower(e.target.value);
-    alert(e.target.value);
+    const name = e.target.name;
+    const value = e.target.value;
+    //어떤식으로 값을 업데이트 ? 
+    setFlower( values => ({...values, [name]:value}));
   }
 
   return(
     <form>
-      <select value={myFlower} onChange={handleChange}>
-        <option value="장미꽃">장미꽃</option>
-        <option value="국화">국화</option>
-      </select>
+      Color : <input type = "text" name = "color" value = {flower.color} onChange={handleChange}/>
+      Kind : <input type = "text" name = "kind" value = {flower.kind} onChange={handleChange}/>
+      <p>{flower.color} {flower.kind}</p>
     </form>
-
   )
 }
 
